@@ -9,7 +9,7 @@
  - None
  
 ### Packages: Unity Registery
- - None
+ - Visual Studio Editor v2.0.16 *
 
 ### Packages: My Assets
  - None
