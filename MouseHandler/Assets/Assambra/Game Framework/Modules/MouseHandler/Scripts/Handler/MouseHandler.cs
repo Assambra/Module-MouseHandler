@@ -163,6 +163,7 @@ public class MouseHandler : MonoBehaviour
                 Cursor.SetCursor(cursorResizeNO_SW, hotspotCursorResizeNO_SW, cursorMode);
                 return true;
             
+            /* This cases are from our UISystem and not in use, for now we comment it out
             // Reset to default e.g on Buttons
             case "ButtonCloseWindow":
             case "ButtonDecreaseWindow":
@@ -172,6 +173,7 @@ public class MouseHandler : MonoBehaviour
             case "ShortcutBarButtonUp":
                 Cursor.SetCursor(arrowLeftDefault, hotspotArrowLeftDefault, cursorMode);
                 return true;
+            */
 
             // Importend to check this as last one! There are more then one GameObject in top of the other to show the right curser on Window resizing and buttons
             case "DragZone":
