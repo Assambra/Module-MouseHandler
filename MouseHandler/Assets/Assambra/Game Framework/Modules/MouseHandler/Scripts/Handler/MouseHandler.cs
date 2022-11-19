@@ -36,8 +36,6 @@ public class MouseHandler : MonoBehaviour
     
     private PointerEventData pointerEventData;
 
-    private int FrameCounter = 0;
-
     private List<GameObject> raycastedGameObjects = new List<GameObject>();
 
     private bool mouseMoveFromUIToWorld = false;
