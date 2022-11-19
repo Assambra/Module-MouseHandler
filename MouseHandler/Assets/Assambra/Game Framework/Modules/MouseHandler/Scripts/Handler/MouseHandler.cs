@@ -10,7 +10,7 @@ public class MouseHandler : MonoBehaviour
 
     [Header("Raycast")]
     [SerializeField] private GraphicRaycaster graphicRaycaster = null;
-    [SerializeField] private int waitFramesForNextRaycast = 12;
+    [SerializeField] private float waitTimeInSecondsForNextRaycast = 0.25f;
     
     [Header("EventSystem")]
     [SerializeField] private EventSystem eventSystem = null;
@@ -43,6 +43,8 @@ public class MouseHandler : MonoBehaviour
     private bool mouseMoveFromUIToWorld = false;
     private bool mouseMoveFromWorldToUI = false;
 
+    private float timer = 0.0f;
+
     private void Awake()
     {
         if (graphicRaycaster == null)
@@ -50,16 +52,15 @@ public class MouseHandler : MonoBehaviour
 
         if (eventSystem == null)
             Debug.LogError("No EventSystem found");
-
-        FrameCounter = waitFramesForNextRaycast +1;
     }
 
     private void Update()
     {
-        FrameCounter--;
-        if(FrameCounter == 0)
+        timer += Time.deltaTime;
+
+        if(timer > waitTimeInSecondsForNextRaycast)
         {
-            FrameCounter = waitFramesForNextRaycast;
+            timer = timer - waitTimeInSecondsForNextRaycast;
 
             raycastedGameObjects.Clear();
             raycastedGameObjects = GetUIGameObjectsMousePointer();
