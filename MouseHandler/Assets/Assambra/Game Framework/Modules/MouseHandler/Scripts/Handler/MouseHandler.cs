@@ -5,17 +5,17 @@ using UnityEngine.UI;
 
 public class MouseHandler : MonoBehaviour
 {
-    [Header("Public Fields")]
+    [Header("Public")]
     public bool IsOverUIElement = false;
 
-    [Header("Serialize Fields Raycast")]
+    [Header("Raycast")]
     [SerializeField] private GraphicRaycaster graphicRaycaster = null;
     [SerializeField] private int waitFramesForNextRaycast = 12;
     
-    [Header("Serialize Fields EventSystem")]
+    [Header("EventSystem")]
     [SerializeField] private EventSystem eventSystem = null;
 
-    [Header("Serialize Fields Mouse Cursor")]
+    [Header("Mouse Cursor")]
     [SerializeField] private Texture2D arrowLeftDefault = null;
     [SerializeField] private Vector2 hotspotArrowLeftDefault = Vector2.zero;
     [SerializeField] private Texture2D cursorDrag = null;
